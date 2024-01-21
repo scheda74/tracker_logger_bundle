@@ -1,24 +1,16 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
 # Flutter Tracker Logger Bundle
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A flutter package that bundles multiple info, event and error trackers and logger libraries to speed up development and debugging.
 
-## Features
+You just initialize it once with all your API keys and use it agnostically throughout your app.
 
-- Firebase Analytics
-- Firebase Crashlytics
+Currently the following libraries are supported:
+
+- [MatomoTracker](https://pub.dev/packages/matomo_tracker)
+- [SentryFlutter](https://pub.dev/packages/sentry_flutter)
+- [FirebaseAnalytics](https://pub.dev/packages/firebase_analytics)
+- [FirebaseCrashlytics](https://pub.dev/packages/firebase_crashlytics)
+- [Logger](https://pub.dev/packages/logger) *(for a prettier debug output)*
 
 ## Getting started
 
