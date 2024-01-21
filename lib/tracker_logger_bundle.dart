@@ -15,7 +15,7 @@ export 'third_party_loggers/sentry/sentry_logger.dart';
 typedef Log = TrackerLoggerBundle;
 
 class TrackerLoggerBundle extends Plugin {
-  late List<Plugin> plugins;
+  List<Plugin> plugins = [];
   LocalLogger? _localLoggerInstance;
 
   TrackerLoggerBundle._internal() : super(name: 'All Loggers');
@@ -30,7 +30,6 @@ class TrackerLoggerBundle extends Plugin {
     bool enableFirebaseAnalytics = false,
     bool enableFirebaseCrashlytics = false,
   }) async {
-    plugins = [];
     if (enableLocalLogger) {
       final instance = LocalLogger();
       plugins.add(instance);
@@ -39,7 +38,9 @@ class TrackerLoggerBundle extends Plugin {
     }
 
     if (matomoOptions != null) {
-      plugins.add(MatomoLogger(options: matomoOptions));
+      final matomo = MatomoLogger(options: matomoOptions);
+      await matomo.initialize();
+      plugins.add(matomo);
       _localLoggerInstance?.logLocal('Initialized matomo tracker');
     }
 

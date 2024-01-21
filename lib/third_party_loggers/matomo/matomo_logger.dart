@@ -48,15 +48,15 @@ class MatomoOptions {
 }
 
 class MatomoLogger extends Plugin {
-  MatomoLogger({required MatomoOptions options}) : super(name: 'MatomoLogger') {
-    initialize(options);
-  }
+  MatomoOptions options;
 
-  Future<void> initialize(MatomoOptions options) async {
+  MatomoLogger({required this.options}) : super(name: 'MatomoLogger');
+
+  Future<void> initialize() async {
     debugPrint(
       'Initializing Matomo for ${options.url} with siteId ${options.siteId} and verbosityLevel ${options.verbosityLevel}...',
     );
-    MatomoTracker.instance.initialize(
+    await MatomoTracker.instance.initialize(
       siteId: options.siteId,
       url: options.url,
       newVisit: options.newVisit,
