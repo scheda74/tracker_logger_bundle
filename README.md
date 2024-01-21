@@ -61,7 +61,7 @@ Future<void> main() async {
         ),
       );
     },
-    // This logs not only to sentry but all other plugins you specified
+    // This logs to all plugins you specified
     (error, stack) async => Log.instance.logError(
       'Uncaught error in zonedGuarded',
       error: error,
@@ -75,17 +75,13 @@ Future<void> main() async {
 
 In order for the plugin to initialize, you need to initialize firebase core. See the [firebase analytics docs](https://firebase.google.com/docs/analytics/get-started?platform=flutter) for more information.
 
-## Usage
+## Collaboration
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+If you have feedback, improvements, ideas please feel free to reach out. This package is far from perfect but I strive towards a useful convenient helper in you everyday analytics / error logging.
 
-```dart
-const like = 'sample';
-```
+## Roadmap / TODOs
 
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+- Add consent management somehow in a smart way
+- Add way more tests
+- Improve log levels
+- Improve debug print
