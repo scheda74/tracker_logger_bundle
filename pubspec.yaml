@@ -1,13 +1,15 @@
 name: tracker_logger_bundle
-description: "A new Flutter package project."
+description: "A bundle of info, event and error trackers and loggers to speed up development and debugging."
 version: 0.0.1
-homepage:
+homepage: https://github.com/scheda74/tracker_logger_bundle
+repository: https://github.com/scheda74/tracker_logger_bundle
 
 environment:
   sdk: '>=3.2.5 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
+  device_info_plus: ^9.1.1
   firebase_analytics: ^10.8.0
   firebase_crashlytics: ^3.4.9
   flutter:
