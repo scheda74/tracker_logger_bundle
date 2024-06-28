@@ -58,7 +58,12 @@ void main() {
 
   test('log event', () async {
     // Act
-    TrackerLoggerBundle.instance.logEvent('test event');
+    TrackerLoggerBundle.instance.logEvent(
+      'test event',
+      action: 'test action',
+      category: 'test category',
+      value: 1,
+    );
 
     // Assert
     expect(TrackerLoggerBundle.instance.plugins.length, 3);

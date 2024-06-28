@@ -90,8 +90,8 @@ class MatomoLogger extends Plugin {
     MatomoTracker.instance.trackEvent(
       eventInfo: EventInfo(
         category: 'error',
-        name: error.toString(),
-        action: stackTrace.toString(),
+        name: '$message: ${error?.toString() ?? ''}',
+        action: stackTrace?.toString() ?? 'no_stacktrace',
       ),
     );
   }
@@ -99,8 +99,8 @@ class MatomoLogger extends Plugin {
   @override
   void logEvent(
     String name, {
-    String? category,
-    String? action,
+    required String category,
+    required String action,
     int? value,
     LogLevel level = LogLevel.info,
   }) {
@@ -110,8 +110,8 @@ class MatomoLogger extends Plugin {
     MatomoTracker.instance.trackEvent(
       eventInfo: EventInfo(
         name: name,
-        category: category ?? '-',
-        action: action ?? '-',
+        category: category,
+        action: action,
         value: value,
       ),
     );

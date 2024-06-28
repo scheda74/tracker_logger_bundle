@@ -1,11 +1,11 @@
 name: tracker_logger_bundle
 description: "A bundle of info, event and error trackers and loggers to speed up development and debugging."
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/scheda74/tracker_logger_bundle
 repository: https://github.com/scheda74/tracker_logger_bundle
 
 environment:
-  sdk: '>=3.2.3 <4.0.0'
+  sdk: ">=3.2.3 <4.0.0"
   flutter: ">=1.17.0"
 
 # This package supports all platforms listed below.

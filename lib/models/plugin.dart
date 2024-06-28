@@ -8,8 +8,8 @@ abstract class Plugin {
   /// logs a generic event
   void logEvent(
     String name, {
-    String? category,
-    String? action,
+    required String category,
+    required String action,
     int? value,
     LogLevel level = LogLevel.info,
   });
