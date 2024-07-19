@@ -3,32 +3,31 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i7;
-import 'dart:collection' as _i6;
-import 'dart:convert' as _i10;
-import 'dart:typed_data' as _i12;
-import 'dart:ui' as _i5;
+import 'dart:async' as _i6;
+import 'dart:collection' as _i5;
+import 'dart:convert' as _i9;
+import 'dart:typed_data' as _i11;
+import 'dart:ui' as _i4;
 
-import 'package:device_info_plus/device_info_plus.dart' as _i19;
-import 'package:flutter/material.dart' as _i20;
+import 'package:device_info_plus/device_info_plus.dart' as _i18;
+import 'package:flutter/material.dart' as _i19;
 import 'package:http/http.dart' as _i2;
-import 'package:matomo_tracker/src/campaign.dart' as _i21;
-import 'package:matomo_tracker/src/content.dart' as _i25;
+import 'package:matomo_tracker/src/campaign.dart' as _i20;
+import 'package:matomo_tracker/src/content.dart' as _i24;
 import 'package:matomo_tracker/src/dispatch_settings.dart' as _i14;
-import 'package:matomo_tracker/src/event_info.dart' as _i23;
-import 'package:matomo_tracker/src/local_storage/local_storage.dart' as _i15;
-import 'package:matomo_tracker/src/logger/log_record.dart' as _i18;
+import 'package:matomo_tracker/src/event_info.dart' as _i22;
+import 'package:matomo_tracker/src/local_storage/local_storage.dart' as _i13;
+import 'package:matomo_tracker/src/logger/log_record.dart' as _i17;
 import 'package:matomo_tracker/src/logger/logger.dart' as _i3;
-import 'package:matomo_tracker/src/matomo.dart' as _i13;
-import 'package:matomo_tracker/src/matomo_dispatcher.dart' as _i8;
-import 'package:matomo_tracker/src/performance_info.dart' as _i22;
-import 'package:matomo_tracker/src/platform_info/platform_info.dart' as _i17;
-import 'package:matomo_tracker/src/session.dart' as _i4;
-import 'package:matomo_tracker/src/tracking_order_item.dart' as _i24;
-import 'package:matomo_tracker/src/visitor.dart' as _i9;
+import 'package:matomo_tracker/src/matomo.dart' as _i12;
+import 'package:matomo_tracker/src/matomo_dispatcher.dart' as _i7;
+import 'package:matomo_tracker/src/performance_info.dart' as _i21;
+import 'package:matomo_tracker/src/platform_info/platform_info.dart' as _i16;
+import 'package:matomo_tracker/src/tracking_order_item.dart' as _i23;
+import 'package:matomo_tracker/src/visitor.dart' as _i8;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:mockito/src/dummies.dart' as _i11;
-import 'package:package_info_plus/package_info_plus.dart' as _i16;
+import 'package:mockito/src/dummies.dart' as _i10;
+import 'package:package_info_plus/package_info_plus.dart' as _i15;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -74,8 +73,8 @@ class _FakeLogger_2 extends _i1.SmartFake implements _i3.Logger {
         );
 }
 
-class _FakeSession_3 extends _i1.SmartFake implements _i4.Session {
-  _FakeSession_3(
+class _FakeSize_3 extends _i1.SmartFake implements _i4.Size {
+  _FakeSize_3(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -84,8 +83,8 @@ class _FakeSession_3 extends _i1.SmartFake implements _i4.Session {
         );
 }
 
-class _FakeSize_4 extends _i1.SmartFake implements _i5.Size {
-  _FakeSize_4(
+class _FakeQueue_4<E> extends _i1.SmartFake implements _i5.Queue<E> {
+  _FakeQueue_4(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -94,8 +93,8 @@ class _FakeSize_4 extends _i1.SmartFake implements _i5.Size {
         );
 }
 
-class _FakeQueue_5<E> extends _i1.SmartFake implements _i6.Queue<E> {
-  _FakeQueue_5(
+class _FakeTimer_5 extends _i1.SmartFake implements _i6.Timer {
+  _FakeTimer_5(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -104,8 +103,9 @@ class _FakeQueue_5<E> extends _i1.SmartFake implements _i6.Queue<E> {
         );
 }
 
-class _FakeTimer_6 extends _i1.SmartFake implements _i7.Timer {
-  _FakeTimer_6(
+class _FakeMatomoDispatcher_6 extends _i1.SmartFake
+    implements _i7.MatomoDispatcher {
+  _FakeMatomoDispatcher_6(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -114,19 +114,8 @@ class _FakeTimer_6 extends _i1.SmartFake implements _i7.Timer {
         );
 }
 
-class _FakeMatomoDispatcher_7 extends _i1.SmartFake
-    implements _i8.MatomoDispatcher {
-  _FakeMatomoDispatcher_7(
-    Object parent,
-    Invocation parentInvocation,
-  ) : super(
-          parent,
-          parentInvocation,
-        );
-}
-
-class _FakeVisitor_8 extends _i1.SmartFake implements _i9.Visitor {
-  _FakeVisitor_8(
+class _FakeVisitor_7 extends _i1.SmartFake implements _i8.Visitor {
+  _FakeVisitor_7(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -140,7 +129,7 @@ class _FakeVisitor_8 extends _i1.SmartFake implements _i9.Visitor {
 /// See the documentation for Mockito's code generation for more information.
 class MockClient extends _i1.Mock implements _i2.Client {
   @override
-  _i7.Future<_i2.Response> head(
+  _i6.Future<_i2.Response> head(
     Uri? url, {
     Map<String, String>? headers,
   }) =>
@@ -150,7 +139,7 @@ class MockClient extends _i1.Mock implements _i2.Client {
           [url],
           {#headers: headers},
         ),
-        returnValue: _i7.Future<_i2.Response>.value(_FakeResponse_0(
+        returnValue: _i6.Future<_i2.Response>.value(_FakeResponse_0(
           this,
           Invocation.method(
             #head,
@@ -159,7 +148,7 @@ class MockClient extends _i1.Mock implements _i2.Client {
           ),
         )),
         returnValueForMissingStub:
-            _i7.Future<_i2.Response>.value(_FakeResponse_0(
+            _i6.Future<_i2.Response>.value(_FakeResponse_0(
           this,
           Invocation.method(
             #head,
@@ -167,10 +156,10 @@ class MockClient extends _i1.Mock implements _i2.Client {
             {#headers: headers},
           ),
         )),
-      ) as _i7.Future<_i2.Response>);
+      ) as _i6.Future<_i2.Response>);
 
   @override
-  _i7.Future<_i2.Response> get(
+  _i6.Future<_i2.Response> get(
     Uri? url, {
     Map<String, String>? headers,
   }) =>
@@ -180,7 +169,7 @@ class MockClient extends _i1.Mock implements _i2.Client {
           [url],
           {#headers: headers},
         ),
-        returnValue: _i7.Future<_i2.Response>.value(_FakeResponse_0(
+        returnValue: _i6.Future<_i2.Response>.value(_FakeResponse_0(
           this,
           Invocation.method(
             #get,
@@ -189,7 +178,7 @@ class MockClient extends _i1.Mock implements _i2.Client {
           ),
         )),
         returnValueForMissingStub:
-            _i7.Future<_i2.Response>.value(_FakeResponse_0(
+            _i6.Future<_i2.Response>.value(_FakeResponse_0(
           this,
           Invocation.method(
             #get,
@@ -197,14 +186,14 @@ class MockClient extends _i1.Mock implements _i2.Client {
             {#headers: headers},
           ),
         )),
-      ) as _i7.Future<_i2.Response>);
+      ) as _i6.Future<_i2.Response>);
 
   @override
-  _i7.Future<_i2.Response> post(
+  _i6.Future<_i2.Response> post(
     Uri? url, {
     Map<String, String>? headers,
     Object? body,
-    _i10.Encoding? encoding,
+    _i9.Encoding? encoding,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -216,7 +205,7 @@ class MockClient extends _i1.Mock implements _i2.Client {
             #encoding: encoding,
           },
         ),
-        returnValue: _i7.Future<_i2.Response>.value(_FakeResponse_0(
+        returnValue: _i6.Future<_i2.Response>.value(_FakeResponse_0(
           this,
           Invocation.method(
             #post,
@@ -229,7 +218,7 @@ class MockClient extends _i1.Mock implements _i2.Client {
           ),
         )),
         returnValueForMissingStub:
-            _i7.Future<_i2.Response>.value(_FakeResponse_0(
+            _i6.Future<_i2.Response>.value(_FakeResponse_0(
           this,
           Invocation.method(
             #post,
@@ -241,14 +230,14 @@ class MockClient extends _i1.Mock implements _i2.Client {
             },
           ),
         )),
-      ) as _i7.Future<_i2.Response>);
+      ) as _i6.Future<_i2.Response>);
 
   @override
-  _i7.Future<_i2.Response> put(
+  _i6.Future<_i2.Response> put(
     Uri? url, {
     Map<String, String>? headers,
     Object? body,
-    _i10.Encoding? encoding,
+    _i9.Encoding? encoding,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -260,7 +249,7 @@ class MockClient extends _i1.Mock implements _i2.Client {
             #encoding: encoding,
           },
         ),
-        returnValue: _i7.Future<_i2.Response>.value(_FakeResponse_0(
+        returnValue: _i6.Future<_i2.Response>.value(_FakeResponse_0(
           this,
           Invocation.method(
             #put,
@@ -273,7 +262,7 @@ class MockClient extends _i1.Mock implements _i2.Client {
           ),
         )),
         returnValueForMissingStub:
-            _i7.Future<_i2.Response>.value(_FakeResponse_0(
+            _i6.Future<_i2.Response>.value(_FakeResponse_0(
           this,
           Invocation.method(
             #put,
@@ -285,14 +274,14 @@ class MockClient extends _i1.Mock implements _i2.Client {
             },
           ),
         )),
-      ) as _i7.Future<_i2.Response>);
+      ) as _i6.Future<_i2.Response>);
 
   @override
-  _i7.Future<_i2.Response> patch(
+  _i6.Future<_i2.Response> patch(
     Uri? url, {
     Map<String, String>? headers,
     Object? body,
-    _i10.Encoding? encoding,
+    _i9.Encoding? encoding,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -304,7 +293,7 @@ class MockClient extends _i1.Mock implements _i2.Client {
             #encoding: encoding,
           },
         ),
-        returnValue: _i7.Future<_i2.Response>.value(_FakeResponse_0(
+        returnValue: _i6.Future<_i2.Response>.value(_FakeResponse_0(
           this,
           Invocation.method(
             #patch,
@@ -317,7 +306,7 @@ class MockClient extends _i1.Mock implements _i2.Client {
           ),
         )),
         returnValueForMissingStub:
-            _i7.Future<_i2.Response>.value(_FakeResponse_0(
+            _i6.Future<_i2.Response>.value(_FakeResponse_0(
           this,
           Invocation.method(
             #patch,
@@ -329,14 +318,14 @@ class MockClient extends _i1.Mock implements _i2.Client {
             },
           ),
         )),
-      ) as _i7.Future<_i2.Response>);
+      ) as _i6.Future<_i2.Response>);
 
   @override
-  _i7.Future<_i2.Response> delete(
+  _i6.Future<_i2.Response> delete(
     Uri? url, {
     Map<String, String>? headers,
     Object? body,
-    _i10.Encoding? encoding,
+    _i9.Encoding? encoding,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -348,7 +337,7 @@ class MockClient extends _i1.Mock implements _i2.Client {
             #encoding: encoding,
           },
         ),
-        returnValue: _i7.Future<_i2.Response>.value(_FakeResponse_0(
+        returnValue: _i6.Future<_i2.Response>.value(_FakeResponse_0(
           this,
           Invocation.method(
             #delete,
@@ -361,7 +350,7 @@ class MockClient extends _i1.Mock implements _i2.Client {
           ),
         )),
         returnValueForMissingStub:
-            _i7.Future<_i2.Response>.value(_FakeResponse_0(
+            _i6.Future<_i2.Response>.value(_FakeResponse_0(
           this,
           Invocation.method(
             #delete,
@@ -373,10 +362,10 @@ class MockClient extends _i1.Mock implements _i2.Client {
             },
           ),
         )),
-      ) as _i7.Future<_i2.Response>);
+      ) as _i6.Future<_i2.Response>);
 
   @override
-  _i7.Future<String> read(
+  _i6.Future<String> read(
     Uri? url, {
     Map<String, String>? headers,
   }) =>
@@ -386,7 +375,7 @@ class MockClient extends _i1.Mock implements _i2.Client {
           [url],
           {#headers: headers},
         ),
-        returnValue: _i7.Future<String>.value(_i11.dummyValue<String>(
+        returnValue: _i6.Future<String>.value(_i10.dummyValue<String>(
           this,
           Invocation.method(
             #read,
@@ -395,7 +384,7 @@ class MockClient extends _i1.Mock implements _i2.Client {
           ),
         )),
         returnValueForMissingStub:
-            _i7.Future<String>.value(_i11.dummyValue<String>(
+            _i6.Future<String>.value(_i10.dummyValue<String>(
           this,
           Invocation.method(
             #read,
@@ -403,10 +392,10 @@ class MockClient extends _i1.Mock implements _i2.Client {
             {#headers: headers},
           ),
         )),
-      ) as _i7.Future<String>);
+      ) as _i6.Future<String>);
 
   @override
-  _i7.Future<_i12.Uint8List> readBytes(
+  _i6.Future<_i11.Uint8List> readBytes(
     Uri? url, {
     Map<String, String>? headers,
   }) =>
@@ -416,20 +405,20 @@ class MockClient extends _i1.Mock implements _i2.Client {
           [url],
           {#headers: headers},
         ),
-        returnValue: _i7.Future<_i12.Uint8List>.value(_i12.Uint8List(0)),
+        returnValue: _i6.Future<_i11.Uint8List>.value(_i11.Uint8List(0)),
         returnValueForMissingStub:
-            _i7.Future<_i12.Uint8List>.value(_i12.Uint8List(0)),
-      ) as _i7.Future<_i12.Uint8List>);
+            _i6.Future<_i11.Uint8List>.value(_i11.Uint8List(0)),
+      ) as _i6.Future<_i11.Uint8List>);
 
   @override
-  _i7.Future<_i2.StreamedResponse> send(_i2.BaseRequest? request) =>
+  _i6.Future<_i2.StreamedResponse> send(_i2.BaseRequest? request) =>
       (super.noSuchMethod(
         Invocation.method(
           #send,
           [request],
         ),
         returnValue:
-            _i7.Future<_i2.StreamedResponse>.value(_FakeStreamedResponse_1(
+            _i6.Future<_i2.StreamedResponse>.value(_FakeStreamedResponse_1(
           this,
           Invocation.method(
             #send,
@@ -437,14 +426,14 @@ class MockClient extends _i1.Mock implements _i2.Client {
           ),
         )),
         returnValueForMissingStub:
-            _i7.Future<_i2.StreamedResponse>.value(_FakeStreamedResponse_1(
+            _i6.Future<_i2.StreamedResponse>.value(_FakeStreamedResponse_1(
           this,
           Invocation.method(
             #send,
             [request],
           ),
         )),
-      ) as _i7.Future<_i2.StreamedResponse>);
+      ) as _i6.Future<_i2.StreamedResponse>);
 
   @override
   void close() => super.noSuchMethod(
@@ -459,7 +448,7 @@ class MockClient extends _i1.Mock implements _i2.Client {
 /// A class which mocks [MatomoTracker].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockMatomoTracker extends _i1.Mock implements _i13.MatomoTracker {
+class MockMatomoTracker extends _i1.Mock implements _i12.MatomoTracker {
   @override
   _i3.Logger get log => (super.noSuchMethod(
         Invocation.getter(#log),
@@ -474,39 +463,23 @@ class MockMatomoTracker extends _i1.Mock implements _i13.MatomoTracker {
       ) as _i3.Logger);
 
   @override
-  int get siteId => (super.noSuchMethod(
+  String get siteId => (super.noSuchMethod(
         Invocation.getter(#siteId),
-        returnValue: 0,
-        returnValueForMissingStub: 0,
-      ) as int);
+        returnValue: _i10.dummyValue<String>(
+          this,
+          Invocation.getter(#siteId),
+        ),
+        returnValueForMissingStub: _i10.dummyValue<String>(
+          this,
+          Invocation.getter(#siteId),
+        ),
+      ) as String);
 
   @override
-  set siteId(int? _siteId) => super.noSuchMethod(
+  set siteId(String? _siteId) => super.noSuchMethod(
         Invocation.setter(
           #siteId,
           _siteId,
-        ),
-        returnValueForMissingStub: null,
-      );
-
-  @override
-  _i4.Session get session => (super.noSuchMethod(
-        Invocation.getter(#session),
-        returnValue: _FakeSession_3(
-          this,
-          Invocation.getter(#session),
-        ),
-        returnValueForMissingStub: _FakeSession_3(
-          this,
-          Invocation.getter(#session),
-        ),
-      ) as _i4.Session);
-
-  @override
-  set session(_i4.Session? _session) => super.noSuchMethod(
-        Invocation.setter(
-          #session,
-          _session,
         ),
         returnValueForMissingStub: null,
       );
@@ -555,11 +528,11 @@ class MockMatomoTracker extends _i1.Mock implements _i13.MatomoTracker {
   @override
   String get contentBase => (super.noSuchMethod(
         Invocation.getter(#contentBase),
-        returnValue: _i11.dummyValue<String>(
+        returnValue: _i10.dummyValue<String>(
           this,
           Invocation.getter(#contentBase),
         ),
-        returnValueForMissingStub: _i11.dummyValue<String>(
+        returnValueForMissingStub: _i10.dummyValue<String>(
           this,
           Invocation.getter(#contentBase),
         ),
@@ -575,20 +548,20 @@ class MockMatomoTracker extends _i1.Mock implements _i13.MatomoTracker {
       );
 
   @override
-  _i5.Size get screenResolution => (super.noSuchMethod(
+  _i4.Size get screenResolution => (super.noSuchMethod(
         Invocation.getter(#screenResolution),
-        returnValue: _FakeSize_4(
+        returnValue: _FakeSize_3(
           this,
           Invocation.getter(#screenResolution),
         ),
-        returnValueForMissingStub: _FakeSize_4(
+        returnValueForMissingStub: _FakeSize_3(
           this,
           Invocation.getter(#screenResolution),
         ),
-      ) as _i5.Size);
+      ) as _i4.Size);
 
   @override
-  set screenResolution(_i5.Size? _screenResolution) => super.noSuchMethod(
+  set screenResolution(_i4.Size? _screenResolution) => super.noSuchMethod(
         Invocation.setter(
           #screenResolution,
           _screenResolution,
@@ -597,20 +570,20 @@ class MockMatomoTracker extends _i1.Mock implements _i13.MatomoTracker {
       );
 
   @override
-  _i6.Queue<Map<String, String>> get queue => (super.noSuchMethod(
+  _i5.Queue<Map<String, String>> get queue => (super.noSuchMethod(
         Invocation.getter(#queue),
-        returnValue: _FakeQueue_5<Map<String, String>>(
+        returnValue: _FakeQueue_4<Map<String, String>>(
           this,
           Invocation.getter(#queue),
         ),
-        returnValueForMissingStub: _FakeQueue_5<Map<String, String>>(
+        returnValueForMissingStub: _FakeQueue_4<Map<String, String>>(
           this,
           Invocation.getter(#queue),
         ),
-      ) as _i6.Queue<Map<String, String>>);
+      ) as _i5.Queue<Map<String, String>>);
 
   @override
-  set queue(_i6.Queue<Map<String, String>>? _queue) => super.noSuchMethod(
+  set queue(_i5.Queue<Map<String, String>>? _queue) => super.noSuchMethod(
         Invocation.setter(
           #queue,
           _queue,
@@ -619,20 +592,20 @@ class MockMatomoTracker extends _i1.Mock implements _i13.MatomoTracker {
       );
 
   @override
-  _i7.Timer get dequeueTimer => (super.noSuchMethod(
+  _i6.Timer get dequeueTimer => (super.noSuchMethod(
         Invocation.getter(#dequeueTimer),
-        returnValue: _FakeTimer_6(
+        returnValue: _FakeTimer_5(
           this,
           Invocation.getter(#dequeueTimer),
         ),
-        returnValueForMissingStub: _FakeTimer_6(
+        returnValueForMissingStub: _FakeTimer_5(
           this,
           Invocation.getter(#dequeueTimer),
         ),
-      ) as _i7.Timer);
+      ) as _i6.Timer);
 
   @override
-  set dequeueTimer(_i7.Timer? _dequeueTimer) => super.noSuchMethod(
+  set dequeueTimer(_i6.Timer? _dequeueTimer) => super.noSuchMethod(
         Invocation.setter(
           #dequeueTimer,
           _dequeueTimer,
@@ -641,7 +614,7 @@ class MockMatomoTracker extends _i1.Mock implements _i13.MatomoTracker {
       );
 
   @override
-  set pingTimer(_i7.Timer? _pingTimer) => super.noSuchMethod(
+  set pingTimer(_i6.Timer? _pingTimer) => super.noSuchMethod(
         Invocation.setter(
           #pingTimer,
           _pingTimer,
@@ -650,43 +623,43 @@ class MockMatomoTracker extends _i1.Mock implements _i13.MatomoTracker {
       );
 
   @override
-  _i8.MatomoDispatcher get dispatcher => (super.noSuchMethod(
+  _i7.MatomoDispatcher get dispatcher => (super.noSuchMethod(
         Invocation.getter(#dispatcher),
-        returnValue: _FakeMatomoDispatcher_7(
+        returnValue: _FakeMatomoDispatcher_6(
           this,
           Invocation.getter(#dispatcher),
         ),
-        returnValueForMissingStub: _FakeMatomoDispatcher_7(
+        returnValueForMissingStub: _FakeMatomoDispatcher_6(
           this,
           Invocation.getter(#dispatcher),
         ),
-      ) as _i8.MatomoDispatcher);
+      ) as _i7.MatomoDispatcher);
 
   @override
   String get url => (super.noSuchMethod(
         Invocation.getter(#url),
-        returnValue: _i11.dummyValue<String>(
+        returnValue: _i10.dummyValue<String>(
           this,
           Invocation.getter(#url),
         ),
-        returnValueForMissingStub: _i11.dummyValue<String>(
+        returnValueForMissingStub: _i10.dummyValue<String>(
           this,
           Invocation.getter(#url),
         ),
       ) as String);
 
   @override
-  _i9.Visitor get visitor => (super.noSuchMethod(
+  _i8.Visitor get visitor => (super.noSuchMethod(
         Invocation.getter(#visitor),
-        returnValue: _FakeVisitor_8(
+        returnValue: _FakeVisitor_7(
           this,
           Invocation.getter(#visitor),
         ),
-        returnValueForMissingStub: _FakeVisitor_8(
+        returnValueForMissingStub: _FakeVisitor_7(
           this,
           Invocation.getter(#visitor),
         ),
-      ) as _i9.Visitor);
+      ) as _i8.Visitor);
 
   @override
   bool get initialized => (super.noSuchMethod(
@@ -728,19 +701,36 @@ class MockMatomoTracker extends _i1.Mock implements _i13.MatomoTracker {
       );
 
   @override
-  _i7.Future<void> setOptOut({required bool? optOut}) => (super.noSuchMethod(
+  _i6.Future<void> setOptOut({required bool? optOut}) => (super.noSuchMethod(
         Invocation.method(
           #setOptOut,
           [],
           {#optOut: optOut},
         ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
 
   @override
-  _i7.Future<void> initialize({
-    required int? siteId,
+  void setCookieless({
+    required bool? cookieless,
+    _i13.LocalStorage? localStorage,
+  }) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #setCookieless,
+          [],
+          {
+            #cookieless: cookieless,
+            #localStorage: localStorage,
+          },
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  _i6.Future<void> initialize({
+    required String? siteId,
     required String? url,
     bool? newVisit = true,
     String? visitorId,
@@ -750,11 +740,11 @@ class MockMatomoTracker extends _i1.Mock implements _i13.MatomoTracker {
         const _i14.DispatchSettings.nonPersistent(),
     Duration? pingInterval = const Duration(seconds: 30),
     String? tokenAuth,
-    _i15.LocalStorage? localStorage,
-    _i16.PackageInfo? packageInfo,
-    _i17.PlatformInfo? platformInfo,
+    _i13.LocalStorage? localStorage,
+    _i15.PackageInfo? packageInfo,
+    _i16.PlatformInfo? platformInfo,
     bool? cookieless = false,
-    _i18.Level? verbosityLevel = _i18.Level.off,
+    _i17.Level? verbosityLevel = _i17.Level.off,
     Map<String, String>? customHeaders = const {},
     String? userAgent,
     bool? attachLastScreenInfo = true,
@@ -783,21 +773,21 @@ class MockMatomoTracker extends _i1.Mock implements _i13.MatomoTracker {
             #attachLastScreenInfo: attachLastScreenInfo,
           },
         ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
 
   @override
-  _i7.Future<String?> getUserAgent({_i19.DeviceInfoPlugin? deviceInfoPlugin}) =>
+  _i6.Future<String?> getUserAgent({_i18.DeviceInfoPlugin? deviceInfoPlugin}) =>
       (super.noSuchMethod(
         Invocation.method(
           #getUserAgent,
           [],
           {#deviceInfoPlugin: deviceInfoPlugin},
         ),
-        returnValue: _i7.Future<String?>.value(),
-        returnValueForMissingStub: _i7.Future<String?>.value(),
-      ) as _i7.Future<String?>);
+        returnValue: _i6.Future<String?>.value(),
+        returnValueForMissingStub: _i6.Future<String?>.value(),
+      ) as _i6.Future<String?>);
 
   @override
   void clear() => super.noSuchMethod(
@@ -836,14 +826,14 @@ class MockMatomoTracker extends _i1.Mock implements _i13.MatomoTracker {
       );
 
   @override
-  _i7.Future<void> dispatchActions() => (super.noSuchMethod(
+  _i6.Future<void> dispatchActions() => (super.noSuchMethod(
         Invocation.method(
           #dispatchActions,
           [],
         ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
 
   @override
   void dropActions() => super.noSuchMethod(
@@ -856,12 +846,12 @@ class MockMatomoTracker extends _i1.Mock implements _i13.MatomoTracker {
 
   @override
   void trackPageView({
-    required _i20.BuildContext? context,
+    required _i19.BuildContext? context,
     String? pvId,
     String? path,
-    _i21.Campaign? campaign,
+    _i20.Campaign? campaign,
     Map<String, String>? dimensions,
-    _i22.PerformanceInfo? performanceInfo,
+    _i21.PerformanceInfo? performanceInfo,
     bool? newVisit,
   }) =>
       super.noSuchMethod(
@@ -886,9 +876,9 @@ class MockMatomoTracker extends _i1.Mock implements _i13.MatomoTracker {
     required String? actionName,
     String? pvId,
     String? path,
-    _i21.Campaign? campaign,
+    _i20.Campaign? campaign,
     Map<String, String>? dimensions,
-    _i22.PerformanceInfo? performanceInfo,
+    _i21.PerformanceInfo? performanceInfo,
     bool? newVisit,
   }) =>
       super.noSuchMethod(
@@ -914,7 +904,7 @@ class MockMatomoTracker extends _i1.Mock implements _i13.MatomoTracker {
     double? revenue,
     String? pvId,
     String? path,
-    _i21.Campaign? campaign,
+    _i20.Campaign? campaign,
     Map<String, String>? dimensions,
     bool? newVisit,
   }) =>
@@ -937,10 +927,10 @@ class MockMatomoTracker extends _i1.Mock implements _i13.MatomoTracker {
 
   @override
   void trackEvent({
-    required _i23.EventInfo? eventInfo,
+    required _i22.EventInfo? eventInfo,
     String? pvId,
     String? path,
-    _i21.Campaign? campaign,
+    _i20.Campaign? campaign,
     Map<String, String>? dimensions,
     bool? newVisit,
   }) =>
@@ -965,7 +955,7 @@ class MockMatomoTracker extends _i1.Mock implements _i13.MatomoTracker {
     required Map<String, String>? dimensions,
     String? pvId,
     String? path,
-    _i21.Campaign? campaign,
+    _i20.Campaign? campaign,
     bool? newVisit,
   }) =>
       super.noSuchMethod(
@@ -990,7 +980,7 @@ class MockMatomoTracker extends _i1.Mock implements _i13.MatomoTracker {
     int? searchCount,
     String? pvId,
     String? path,
-    _i21.Campaign? campaign,
+    _i20.Campaign? campaign,
     Map<String, String>? dimensions,
     bool? newVisit,
   }) =>
@@ -1014,14 +1004,15 @@ class MockMatomoTracker extends _i1.Mock implements _i13.MatomoTracker {
 
   @override
   void trackCartUpdate({
-    List<_i24.TrackingOrderItem>? trackingOrderItems,
+    List<_i23.TrackingOrderItem>? trackingOrderItems,
     num? subTotal,
     num? taxAmount,
     num? shippingCost,
     num? discountAmount,
+    double? grandTotal,
     String? pvId,
     String? path,
-    _i21.Campaign? campaign,
+    _i20.Campaign? campaign,
     Map<String, String>? dimensions,
     bool? newVisit,
   }) =>
@@ -1035,6 +1026,7 @@ class MockMatomoTracker extends _i1.Mock implements _i13.MatomoTracker {
             #taxAmount: taxAmount,
             #shippingCost: shippingCost,
             #discountAmount: discountAmount,
+            #grandTotal: grandTotal,
             #pvId: pvId,
             #path: path,
             #campaign: campaign,
@@ -1049,14 +1041,14 @@ class MockMatomoTracker extends _i1.Mock implements _i13.MatomoTracker {
   void trackOrder({
     required String? id,
     required double? revenue,
-    List<_i24.TrackingOrderItem>? trackingOrderItems,
+    List<_i23.TrackingOrderItem>? trackingOrderItems,
     num? subTotal,
     num? taxAmount,
     num? shippingCost,
     num? discountAmount,
     String? pvId,
     String? path,
-    _i21.Campaign? campaign,
+    _i20.Campaign? campaign,
     Map<String, String>? dimensions,
     bool? newVisit,
   }) =>
@@ -1087,7 +1079,7 @@ class MockMatomoTracker extends _i1.Mock implements _i13.MatomoTracker {
     required String? link,
     String? pvId,
     String? path,
-    _i21.Campaign? campaign,
+    _i20.Campaign? campaign,
     Map<String, String>? dimensions,
     bool? newVisit,
   }) =>
@@ -1109,10 +1101,10 @@ class MockMatomoTracker extends _i1.Mock implements _i13.MatomoTracker {
 
   @override
   void trackContentImpression({
-    required _i25.Content? content,
+    required _i24.Content? content,
     String? pvId,
     String? path,
-    _i21.Campaign? campaign,
+    _i20.Campaign? campaign,
     Map<String, String>? dimensions,
     bool? newVisit,
   }) =>
@@ -1134,11 +1126,11 @@ class MockMatomoTracker extends _i1.Mock implements _i13.MatomoTracker {
 
   @override
   void trackContentInteraction({
-    required _i25.Content? content,
+    required _i24.Content? content,
     required String? interaction,
     String? pvId,
     String? path,
-    _i21.Campaign? campaign,
+    _i20.Campaign? campaign,
     Map<String, String>? dimensions,
   }) =>
       super.noSuchMethod(

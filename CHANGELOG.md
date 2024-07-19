@@ -1,4 +1,8 @@
 
+## 0.0.4
+
+- increase http and uuid versions
+
 ## 0.0.3
 
 - Fix error logging with hint

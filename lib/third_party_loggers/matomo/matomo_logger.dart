@@ -8,7 +8,7 @@ import '../../models/log_level.dart';
 import '../../models/plugin.dart';
 
 class MatomoOptions {
-  final int siteId;
+  final String siteId;
   final String url;
   final bool newVisit;
   final String? visitorId;

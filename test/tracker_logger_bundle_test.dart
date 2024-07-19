@@ -30,7 +30,7 @@ void main() {
       enableLocalLogger: true,
       matomoOptions: const MatomoOptions(
         url: '',
-        siteId: 1,
+        siteId: '1',
       ),
       sentryConfig: SentryConfig(
         optionsConfiguration: (options) {

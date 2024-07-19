@@ -9,7 +9,8 @@ Future<void> main() async {
       WidgetsFlutterBinding.ensureInitialized();
 
       await Log.instance.initialize(
-        matomoOptions: const MatomoOptions(siteId: 69, url: 'your-matomo-url'),
+        matomoOptions:
+            const MatomoOptions(siteId: '69', url: 'your-matomo-url'),
         sentryConfig: SentryConfig(
           optionsConfiguration: (options) {
             options.dsn = '';

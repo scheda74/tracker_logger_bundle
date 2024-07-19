@@ -1,6 +1,6 @@
 name: tracker_logger_bundle
 description: "A bundle of info, event and error trackers and loggers to speed up development and debugging."
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/scheda74/tracker_logger_bundle
 repository: https://github.com/scheda74/tracker_logger_bundle
 
@@ -25,10 +25,10 @@ dependencies:
     sdk: flutter
   http: ^1.2.0
   logger: ^2.0.2+1
-  matomo_tracker: ^4.1.1
-  package_info_plus: ^5.0.1
-  sentry_flutter: ^7.14.0
-  shared_preferences: ^2.2.2
+  matomo_tracker: ^5.0.0+1
+  package_info_plus: ^8.0.0
+  sentry_flutter: ^8.4.0
+  shared_preferences: ^2.2.3
 
 dev_dependencies:
   flutter_test:
