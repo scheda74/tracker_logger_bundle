@@ -1,3 +1,6 @@
+## 0.0.5
+
+- improve sentry error logging
 
 ## 0.0.4
 

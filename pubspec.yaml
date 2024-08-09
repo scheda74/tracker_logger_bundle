@@ -1,6 +1,6 @@
 name: tracker_logger_bundle
 description: "A bundle of info, event and error trackers and loggers to speed up development and debugging."
-version: 0.0.4
+version: 0.0.5
 homepage: https://github.com/scheda74/tracker_logger_bundle
 repository: https://github.com/scheda74/tracker_logger_bundle
 
