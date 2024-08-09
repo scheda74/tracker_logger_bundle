@@ -33,8 +33,13 @@ class SentryLogger extends Plugin {
     if (level == LogLevel.debug) {
       return;
     }
-    final hint = Hint()..set('message', {'value': message});
-    Sentry.captureException(error, stackTrace: stackTrace, hint: hint);
+    Sentry.captureMessage(
+      message,
+      params: [
+        {'error': error, 'stackTrace': stackTrace},
+      ],
+      level: SentryLevel.error,
+    );
   }
 
   @override
