@@ -1,6 +1,6 @@
 name: tracker_logger_bundle
 description: "A bundle of info, event and error trackers and loggers to speed up development and debugging."
-version: 0.0.5
+version: 0.0.6
 homepage: https://github.com/scheda74/tracker_logger_bundle
 repository: https://github.com/scheda74/tracker_logger_bundle
 
@@ -19,8 +19,6 @@ platforms:
 
 dependencies:
   device_info_plus: ^9.1.1
-  firebase_analytics: ^10.8.0
-  firebase_crashlytics: ^3.4.9
   flutter:
     sdk: flutter
   http: ^1.2.0

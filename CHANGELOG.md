@@ -1,3 +1,7 @@
+## 0.0.6
+
+- remove firebase analytics
+
 ## 0.0.5
 
 - improve sentry error logging

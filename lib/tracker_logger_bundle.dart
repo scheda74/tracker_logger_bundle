@@ -2,8 +2,6 @@ library tracker_logger_bundle;
 
 import 'models/log_level.dart';
 import 'models/plugin.dart';
-import 'third_party_loggers/firebase_analytics/firebase_analytics.dart';
-import 'third_party_loggers/firebase_crashlytics/firebase_crashlytics.dart';
 import 'third_party_loggers/local/local_logger.dart';
 import 'third_party_loggers/matomo/matomo_logger.dart';
 import 'third_party_loggers/sentry/sentry_logger.dart' as sentry;
@@ -47,16 +45,6 @@ class TrackerLoggerBundle extends Plugin {
     if (sentryConfig != null) {
       plugins.add(sentry.SentryLogger(config: sentryConfig));
       _localLoggerInstance?.logLocal('Initialized sentry');
-    }
-
-    if (enableFirebaseAnalytics) {
-      plugins.add(FirebaseAnalyticsLogger());
-      _localLoggerInstance?.logLocal('Initialized FirebaseAnalytics logger');
-    }
-
-    if (enableFirebaseCrashlytics) {
-      plugins.add(FirebaseCrashlyticsLogger());
-      _localLoggerInstance?.logLocal('Initialized FirebaseCrashlytics logger');
     }
   }
 
