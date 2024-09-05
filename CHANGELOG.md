@@ -1,3 +1,7 @@
+## 0.0.7
+
+- update packages, particularly sentry_flutter to 8.34.0 as 8.33.0 was deprecated
+
 ## 0.0.6
 
 - remove firebase analytics

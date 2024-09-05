@@ -1,6 +1,6 @@
 name: tracker_logger_bundle
 description: "A bundle of info, event and error trackers and loggers to speed up development and debugging."
-version: 0.0.6
+version: 0.0.7
 homepage: https://github.com/scheda74/tracker_logger_bundle
 repository: https://github.com/scheda74/tracker_logger_bundle
 
@@ -40,6 +40,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  sdk: flutter
 
   # To add assets to your package, add an assets section, like this:
   # assets:
